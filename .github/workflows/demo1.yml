@@ -4,6 +4,14 @@ on:
     types:
       - opened
   workflow_dispatch:
+  push:
+    branches:
+      - master # master only
+      - 'dev-*' # dev-new dev-this-is-new
+      - feat/** # feat/new feat/new/button
+      # developer-1
+    paths-ignore:
+      - '.github/workflow/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
